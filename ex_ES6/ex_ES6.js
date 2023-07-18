@@ -57,4 +57,8 @@ let addedCourses = [
 ];
 
 
-console.log(...courses, ...addedCourses);
+const merge = (course,add) =>  [...courses, ...addedCourses];
+
+
+console.log(merge(...courses, ...addedCourses));
+
