@@ -80,7 +80,7 @@
         }
 
         button {
-            background: #2f4ad0;
+            background: #242426;
             margin: 16px 0 50px 0;
             padding: 8px 16px;
             color: #fff;
@@ -144,13 +144,13 @@
                 <input id="dateOfBirth" name="dd/mm/yyyy" type="date" placeholder="e.g. john doe" required>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-                <input  type="radio" name="gender" value="Female"> Female
+        <div class="field">
+            <div for="dateOfBirth" style="padding-left: 20px">
+                Gender<i class="far fa-user"></i>
             </div>
-            <div class="col-6">
-                <input  type="radio" name="gender" value="Male"> <span>Male</span>
-            </div>
+            <span style="float: left;margin-left: 100px"> <input type="radio" name="gender" value="Female"> Female</span>
+            <span style="float: left;margin-left: 60px"> <input type="radio" name="gender" value="Male">Male</span>
+
         </div>
         <div class="row">
             <div class="field col-6" tabindex="2">
@@ -180,7 +180,7 @@
                 <input id="address" name="address" type="text" required>
             </div>
         </div>
-        <button type="reset">Send Me Message</button>
+        <button type="reset">ADD</button>
     </form>
 </div>
 
