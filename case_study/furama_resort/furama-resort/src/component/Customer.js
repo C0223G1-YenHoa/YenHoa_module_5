@@ -1,0 +1,83 @@
+function Customer(){
+    return(
+        <>
+        <div className="container-xl">
+  <div className="table-responsive">
+    <div className="table-wrapper">
+      <div className="table-title">
+        <div className="row">
+          <div className="col-sm-5">
+            <h2>Customer <b>Management</b></h2>
+          </div>
+          <div className="col-sm-7">
+            <a href="#" className="btn btn-secondary"><i className="material-icons"></i> <span>Add New Customer</span></a>
+          </div>
+        </div>
+      </div>
+      <table className="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>Gender</th>
+            <th>Citizen ID</th>
+            <th>Tel</th>
+            <th>Email</th>
+            <th>Cus Type</th>
+            <th>Address</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><a href="#"> Michael Holz</a></td>
+            <td>04/10/1999</td>
+            <td>Male</td>
+            <td>44434343</td>
+            <td>34342424124</td>
+            <td>abc@gmail.com</td>
+            <td>Diamond</td>
+            <td>England</td>
+            <td>
+              <a href="#" className="settings" title="Settings" data-toggle="tooltip"><i className="material-icons"></i></a>
+              <a href="#" className="delete" title="Delete" data-toggle="tooltip"><i className="material-icons"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td> Michael</td>
+            <td>04/10/1999</td>
+            <td>FeMale</td>
+            <td>767676</td>
+            <td>8787878</td>
+            <td>abc@gmail.com</td>
+            <td>Diamond</td>
+            <td>England</td>
+            <td>
+              <a href="#" className="settings" title="Settings" data-toggle="tooltip"><i className="material-icons"></i></a>
+              <a href="#" className="delete" title="Delete" data-toggle="tooltip"><i className="material-icons"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div className="clearfix">
+        <div className="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+        <ul className="pagination">
+          <li className="page-item disabled"><a href="#">Previous</a></li>
+          <li className="page-item"><a href="#" className="page-link">1</a></li>
+          <li className="page-item"><a href="#" className="page-link">2</a></li>
+          <li className="page-item active"><a href="#" className="page-link">3</a></li>
+          <li className="page-item"><a href="#" className="page-link">4</a></li>
+          <li className="page-item"><a href="#" className="page-link">5</a></li>
+          <li className="page-item"><a href="#" className="page-link">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+        </>
+    )
+}
+export default Customer;
