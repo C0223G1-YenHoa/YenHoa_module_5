@@ -9,9 +9,9 @@ function Contact(){
         <h1>CONTACT FORM</h1>
         <Formik initialValues={{name:'',email:'',phone:'',message:''}} 
         validationSchema={Yup.object({
-            name: Yup.string().required('Required'),
+            name: Yup.string().required('Please enter your name !'),
             email: Yup.string().matches('/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+[a-zA-Z0-9-.]+$/','Invalid email').required('Required'),
-            phone: Yup.string().required('Required')
+            phone: Yup.string().required('Please enter your phone number !')
         })}
         onSubmit={(values)=>{
             console.log(values);
