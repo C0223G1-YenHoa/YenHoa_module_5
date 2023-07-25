@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { deleteId, getBooks } from './LibraryService';
+import { deleteId, getBooks } from '../service/LibraryService';
 import { Link, useNavigate } from "react-router-dom";
 
 export function Library() {
     const navigate = useNavigate();
     const [books, setBooks] = useState([]);
-    useEffect(() => {
-        const libraries = async () => {
+     const libraries = async () => {
             const data = await getBooks();
             setBooks(data);
         }
+    useEffect(() => {
         libraries();
     }, [])
 
@@ -32,8 +32,7 @@ export function Library() {
                             <td><button> <Link to={`/library/update/${book.id}`}>Edit</Link></button></td>
                             <td><button onClick={async () => {
                                 deleteId(book.id)
-                                const data = await getBooks();
-                                setBooks(data);
+                                libraries()
                                 navigate("/library")
                             }} >Delete</button></td>
                         </td>

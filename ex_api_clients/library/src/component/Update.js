@@ -1,19 +1,19 @@
 
 import { useNavigate, useParams } from 'react-router-dom';
-import { getBook, update } from './LibraryService';
+import { getBook, update } from '../service/LibraryService';
 import { useEffect, useState } from 'react';
 
 function Update() {
     const navigate = useNavigate();
     const param = useParams();
     const [book, setBook] = useState({});
-    useEffect(() => {
-        const findBook = async () => {
+    const findBook = async () => {
             const data = await getBook(param.id);
             setBook(data);
         }
+    useEffect(() => {
         findBook();
-    }, [])
+    }, [param.id])
 
     console.log(book);
     const handleSubmit = () => {
