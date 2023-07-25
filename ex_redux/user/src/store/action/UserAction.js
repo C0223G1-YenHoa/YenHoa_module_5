@@ -8,6 +8,7 @@ export const getUserList = () => {
     }
 }
 
+
 export const deleteUser = (id) => {
     return async (dispatch)=>{
      await deleteUserById(id).then(

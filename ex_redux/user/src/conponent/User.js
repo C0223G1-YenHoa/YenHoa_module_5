@@ -16,6 +16,7 @@ export default function User() {
         dispatch(getUserList())
     };
 
+    
     // useEffect(()=>{
     //     dispatch(getUserList())
     // },[dispatch])

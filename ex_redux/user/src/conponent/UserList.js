@@ -12,7 +12,6 @@ const dispatch=useDispatch();
                                 <td>{user.email}</td>
                                 <td>{user.website}</td>
                                 <button onClick={()=> dispatch(deleteUser(user.id))} >Delete User</button>
-                               
          
         </>
         )

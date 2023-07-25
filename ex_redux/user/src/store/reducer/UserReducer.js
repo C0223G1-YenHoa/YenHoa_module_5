@@ -11,6 +11,7 @@ export const userReducer = (state = initialValue, action) => {
             return {
                 ...state,users: action.payload 
                 
+                
             };
         case 'DELETE_USER':
             console.log(action.type);
