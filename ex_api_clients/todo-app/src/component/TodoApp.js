@@ -4,12 +4,12 @@ import { createItem, getList } from './ListService';
 export default function TodoApp() {
     const [item, setItem] = useState({});
     const [list, setList] = useState([]);
-    const[length,setLength]=useState(0)
-    useEffect(() => {
-        const listToDo = async () => {
+    const[length,setLength]=useState(0);
+    const listToDo = async () => {
             const data = await getList();
             setList(data);
         }
+    useEffect(() => {
         listToDo()
     }, [length]);
 
