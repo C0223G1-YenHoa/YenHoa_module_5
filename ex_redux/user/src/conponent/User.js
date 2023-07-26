@@ -16,7 +16,7 @@ export default function User() {
         dispatch(getUserList())
     };
 
-    
+
     // useEffect(()=>{
     //     dispatch(getUserList())
     // },[dispatch])
@@ -38,7 +38,7 @@ export default function User() {
                         users.map((user) => {
                             return (
                                 <tr key={user.id}>
-                                <UserList  user={user} />
+                                    <UserList user={user} />
                                 </tr>
                             )
                         }
