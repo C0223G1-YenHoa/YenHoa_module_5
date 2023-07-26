@@ -40,14 +40,14 @@ function CustomerCreation() {
                                 <ErrorMessage component='div' className='text-red' name='name' />
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row w-100 mr-20 ml-20">
                                 <div className="field col-6 mt-3">
-                                    <div htmlFor="dateOfBirth" style={{ paddingLeft: '5px' }}>
+                                    <div htmlFor="dateOfBirth" style={{ paddingLeft: '5px',paddingBottom:'10px' }}>
                                         <i className="fa-solid fa-transgender" /> Gender
                                     </div>
                                     <ErrorMessage component='div' className='text-red' name='gender' />
-                                    <span style={{ float: 'left', marginLeft: '20px' }}> <Field className='w in' type="radio" name="gender" defaultValue="Female" /> Female</span>
-                                    <span style={{ float: 'left', marginLeft: '20px' }}> <Field className='w in' type="radio" name="gender" defaultValue="Male" />Male</span>
+                                    <span style={{ float: 'left', marginLeft: '20px' }}> <Field className='w in' type="radio" name="gender" values="Female" /> Female</span>
+                                    <span style={{ float: 'left', marginLeft: '20px' }}> <Field className='w in' type="radio" name="gender" values="Male" />Male</span>
                                 </div>
                                 <div className="field col-6 mt-3">
                                     <label className='w' htmlFor="dateOfBirth">
@@ -57,7 +57,7 @@ function CustomerCreation() {
                                     <ErrorMessage component='div' className='text-red' name='birth' />
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row w-100 mr-20 ml-20">
                                 <div className="field col-6" tabIndex={2}>
                                     <label className='w in' htmlFor="email">
                                         <i className="fa-solid fa-envelope" />Your Email
@@ -73,7 +73,7 @@ function CustomerCreation() {
                                     <ErrorMessage component='div' className='text-red' name='idCard' />
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row w-100 mr-20 ml-20">
                                 <div className="field col-6" tabIndex={2}>
                                     <label className='w in' htmlFor="tel">
                                         <i className="fa-solid fa-phone" />Tel
