@@ -13,6 +13,12 @@ export function Library() {
         libraries();
     }, [])
 
+    const onClick = async (id) => {
+        deleteId(id)
+        libraries()
+        navigate("/library")
+    }
+
     return (
         <>
             <h1>LIBRARY</h1>
@@ -30,11 +36,7 @@ export function Library() {
                         <td>{book.quantity}</td>
                         <td>
                             <td><button> <Link to={`/library/update/${book.id}`}>Edit</Link></button></td>
-                            <td><button onClick={async () => {
-                                deleteId(book.id)
-                                libraries()
-                                navigate("/library")
-                            }} >Delete</button></td>
+                            <td><button onClick={()=>onClick(book.id)} >Delete</button></td>
                         </td>
                     </tr>)
                     )}
