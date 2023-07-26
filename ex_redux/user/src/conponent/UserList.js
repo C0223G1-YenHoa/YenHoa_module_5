@@ -4,6 +4,12 @@ import { deleteUser } from "../store/action/UserAction";
 
 export default function UserList({ user }) {
     const dispatch = useDispatch();
+    const deleteUserById= (id) => {
+                if (window.confirm("Are you sure delete this user?")) {
+                    dispatch(deleteUser(id))
+                }
+            }
+
     return (
         <>
 
@@ -11,11 +17,7 @@ export default function UserList({ user }) {
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.website}</td>
-            <button onClick={() => {
-                if (window.confirm("Are you sure delete this user?")) {
-                    dispatch(deleteUser(user.id))
-                }
-            }} >Delete User</button>
+            <button onClick={()=>deleteUserById(user.id)} >Delete User</button>
 
         </>
     )
