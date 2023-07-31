@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function Header() {
     return (
         <div>
@@ -24,10 +27,10 @@ function Header() {
                             <small>+84-236-3847 333/888</small>
                         </div>
                         <div className="h-100 d-inline-flex align-items-center">
-                            <a className="btn btn-sm-square bg-white text-primary me-1" href><i className="fab fa-facebook-f" /></a>
-                            <a className="btn btn-sm-square bg-white text-primary me-1" href><i className="fab fa-twitter" /></a>
-                            <a className="btn btn-sm-square bg-white text-primary me-1" href><i className="fab fa-linkedin-in" /></a>
-                            <a className="btn btn-sm-square bg-white text-primary me-0" href><i className="fab fa-instagram" /></a>
+                            <a className="btn btn-sm-square bg-white text-primary me-1" ><i className="fab fa-facebook-f" /></a>
+                            <a className="btn btn-sm-square bg-white text-primary me-1" ><i className="fab fa-twitter" /></a>
+                            <a className="btn btn-sm-square bg-white text-primary me-1" ><i className="fab fa-linkedin-in" /></a>
+                            <a className="btn btn-sm-square bg-white text-primary me-0" ><i className="fab fa-instagram" /></a>
                         </div>
                     </div>
                 </div>
@@ -43,23 +46,22 @@ function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
-                        <a href="index.html" className="nav-item nav-link active">Home</a>
-                        <a href="about.html" className="nav-item nav-link">Room</a>
-                        <a href="service.html" className="nav-item nav-link">House</a>
-                        <a href="project.html" className="nav-item nav-link">Villa</a>
+                        <Link to='/' className="nav-item nav-link active">Home</Link>
+                        <Link to='/room' className="nav-item nav-link">Room & suits</Link>
+                        <Link to='/customer' className="nav-item nav-link">Customer</Link>
+                        <Link to='/service' className="nav-item nav-link">Service</Link>
+                        <Link to='/contract' className="nav-item nav-link">Contract</Link>
                         <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a  className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div className="dropdown-menu fade-up m-0">
-                                <a href="feature.html" className="dropdown-item">Feature</a>
-                                <a href="quote.html" className="dropdown-item">Free Quote</a>
-                                <a href="team.html" className="dropdown-item">Our Team</a>
-                                <a href="testimonial.html" className="dropdown-item">Testimonial</a>
+                                <a  className="dropdown-item">Feature</a>
+                                <a className="dropdown-item">Free Quote</a>
+                                <a className="dropdown-item">Our Team</a>
+                                <a  className="dropdown-item">Testimonial</a>
                                 <a href="404.html" className="dropdown-item">404 Page</a>
                             </div>
                         </div>
-                        <a href="contact.html" className="nav-item nav-link">Contact</a>
                     </div>
-                    <a href className="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i className="fa fa-arrow-right ms-3" /></a>
                 </div>
             </nav>
             {/* Navbar End */}

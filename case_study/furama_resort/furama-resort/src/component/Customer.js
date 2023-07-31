@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { getCustomers } from "../service/customer";
+import { deleteCustomer, getCustomers } from "../service/customer";
+import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
+
 
 function Customer() {
   const [customers, setCustomers] = useState([])
@@ -23,7 +26,7 @@ function Customer() {
                   <h2>Customer <b>Management</b></h2>
                 </div>
                 <div className="col-sm-7">
-                  <a href="#" className="btn btn-secondary"><i className="material-icons"></i> <span>Add New Customer</span></a>
+                  <Link to='/customer/create' className="btn btn-secondary"><i className="material-icons"></i> <span>Add New Customer</span></Link>
                 </div>
               </div>
             </div>
@@ -44,27 +47,55 @@ function Customer() {
               </thead>
               <tbody>
                 {
-                  customers.map((customer, index) => {
+                  customers.map((customer, index) =>
                     <tr key={index}>
-                      <td>{index+1}</td>
+                      <td>{index + 1}</td>
                       <td><a href="#"> {customer.name}</a></td>
-                      <td>{customer.date_of_birth}</td>
+                      <td>{customer.birth}</td>
                       <td>{customer.gender}</td>
-                      <td>{customer.id_card}</td>
-                      <td>{customer.phone_number}</td>
+                      <td>{customer.idCard}</td>
+                      <td>{customer.tel}</td>
                       <td>{customer.email}</td>
-                      <td>{customer.customer_type}</td>
+                      <td>{customer.customer_type.type}</td>
                       <td>{customer.address}</td>
                       <td>
-                        <a href="#" className="settings" title="Settings" data-toggle="tooltip"><i className="material-icons"></i></a>
-                        <a href="#" className="delete" title="Delete" data-toggle="tooltip"><i className="material-icons"></i></a>
+                        <Link to={`/customer/edit/${customer.id}`} className="settings" title="Settings" data-toggle="tooltip"><i className="material-icons"></i></Link>
+                        <Link onClick={
+                          () => {
+                            Swal.fire({
+                              title: 'Are you sure?',
+                              text: 'You will not be able to recover this file!',
+                              icon: 'warning',
+                              showCancelButton: true,
+                              confirmButtonText: 'Yes, delete it!',
+                              cancelButtonText: 'No, cancel!',
+                              reverseButtons: true
+                            }
+                            ).then(async (res) => {
+                              if (res.isConfirmed) {
+                                await deleteCustomer(customer.id).then(() => {
+                                  getCustomers().then((data) => {
+                                    setCustomers(data);
+                                  }).then(() => {
+                                    Swal.fire({
+                                      icon: 'success',
+                                      title: 'Delete success fully!!!!',
+                                      showConfirmButton: false,
+                                      timer: 1500
+                                    })
+                                  })
+                                });
+                              } else if (res.dismiss === Swal.DismissReason.cancel) {
+                              }
+                            })
+                          }} className="delete" title="Delete" data-toggle="tooltip" ><i className="material-icons"></i></Link>
                       </td>
                     </tr>
-                  })
+                  )
                 }
               </tbody>
             </table>
-            <div className="clearfix">
+            {/* <div className="clearfix">
               <div className="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
               <ul className="pagination">
                 <li className="page-item disabled"><a href="#">Previous</a></li>
@@ -75,7 +106,7 @@ function Customer() {
                 <li className="page-item"><a href="#" className="page-link">5</a></li>
                 <li className="page-item"><a href="#" className="page-link">Next</a></li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

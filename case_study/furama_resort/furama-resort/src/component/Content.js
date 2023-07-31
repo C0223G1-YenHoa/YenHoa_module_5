@@ -3,30 +3,12 @@ function Content() {
 
     return (
         <div>
-              <link href="%PUBLIC_URL%/img/favicon.ico" rel="icon"/>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
-  rel="stylesheet"/>
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
-
-<link href="%PUBLIC_URL%/lib/animate/animate.min.css" rel="stylesheet"/>
-<link href="%PUBLIC_URL%/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
-<link href="%PUBLIC_URL%/lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>
-
-
-<link href="%PUBLIC_URL%/css/bootstrap.min.css" rel="stylesheet"/>
-
-<link href="%PUBLIC_URL%/css/style.css" rel="stylesheet"/>
+              
             {/* Carousel Start */}
 
             <div className="container-fluid p-0 pb-5">
                 <img className="img-fluid" src="./img/furama-resort-da-nang-6-cr-800x450-1.jpg" alt="" />
-                <div className="position-absolute top-0 start-0 w-100  d-flex align-items-center" style={{ background: 'rgba(53, 53, 53, .7)' , height:970,paddingTop:20}}>
+                <div className="position-absolute top-0 start-0 w-100  d-flex align-items-center" style={{ background: 'rgba(53, 53, 53, .7)' , height:890,paddingTop:20}}>
                     <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-12 col-lg-8 text-center">
@@ -90,7 +72,7 @@ function Content() {
                     <div className="row g-0 mx-lg-0">
                         <div className="col-lg-6 ps-lg-0" style={{ minHeight: '400px' }}>
                             <div className="position-relative h-100">
-                                <img className="position-absolute img-fluid align-items-center w-100 " src="img/46741cbc-7cb9-4ccf-ac09-07b7f4fdc76d.jpeg" style={{ objectFit: 'cover', }} alt="" />
+                                <img className="position-absolute img-fluid align-items-center w-100 " src="img/46741cbc-7cb9-4ccf-ac09-07b7f4fdc76d.jpeg" style={{ objectFit: 'cover','paddingLeft':90 }} alt="" />
                             </div>
                         </div>
                         <div className="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -116,7 +98,7 @@ Overlooking the long stretch of wide white sand on Danang Beach, Furama Resort D
                         <div className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                             <div className="service-item">
                                 <div className="overflow-hidden">
-                                    <img className="img-fluid w-100" src="img/CULIRARY.jpg" alt="" style={{height:250 }}/>
+                                    <img className="img-fluid w-100" src="img/CULIRARY.jpg" alt="" style={{height:250}}/>
                                 </div>
                                 <div className="p-4 text-center border border-5 border-light border-top-0">
                                     <h4 className="mb-3">CULIRARY</h4>
@@ -128,7 +110,7 @@ Overlooking the long stretch of wide white sand on Danang Beach, Furama Resort D
                         <div className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                             <div className="service-item">
                                 <div className="overflow-hidden">
-                                    <img className="img-fluid" src="img/service-2.jpg" alt="" />
+                                    <img className="img-fluid" src="img/02.-ICP-ICP_Furama_Danang_-Ball-Room-4.jpg" style={{'height':250,width:420}} alt="" />
                                 </div>
                                 <div className="p-4 text-center border border-5 border-light border-top-0">
                                     <h4 className="mb-3">MEETING & EVENT</h4>
@@ -140,7 +122,7 @@ Overlooking the long stretch of wide white sand on Danang Beach, Furama Resort D
                         <div className="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                             <div className="service-item">
                                 <div className="overflow-hidden">
-                                    <img className="img-fluid" src="img/service-3.jpg" alt="" />
+                                    <img className="img-fluid" src="img/RECREATION.jpg" style={{'height':250,width:420}} alt="" />
                                 </div>
                                 <div className="p-4 text-center border border-5 border-light border-top-0">
                                     <h4 className="mb-3">RECREATION</h4>
@@ -157,7 +139,7 @@ Overlooking the long stretch of wide white sand on Danang Beach, Furama Resort D
             <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
                 <div className="container feature px-lg-0">
                     <div className="row g-0 mx-lg-0">
-                        <div className="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                        <div className="col-lg-6 feature-text py-5 wow fadeIn" style={{'paddingLeft':80}} data-wow-delay="0.5s">
                             <div className="p-lg-5 ps-lg-0">
                                 <div className="section-title text-start">
                                     <h1 className="display-5 mb-4">Why Choose Us</h1>

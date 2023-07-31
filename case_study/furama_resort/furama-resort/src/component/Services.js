@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { getServices } from "../service/service";
+import { deleteService, getServices } from "../service/service";
+import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
+
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -25,7 +28,7 @@ function Services() {
                   <h2>Service <b>Management</b></h2>
                 </div>
                 <div className="col-sm-7">
-                  <a href="#" className="btn btn-secondary"><i className="material-icons"></i> <span>Add New Service</span></a>
+                  <Link to='/service/create' className="btn btn-secondary"><i className="material-icons"></i> <span>Add New Service</span></Link>
                 </div>
               </div>
             </div>
@@ -48,9 +51,9 @@ function Services() {
               </thead>
               <tbody>
                 {
-                  services.map((service, index) => 
+                  services.map((service, index) =>
                     <tr key={index}>
-                      <td>{index+1}</td>
+                      <td>{index + 1}</td>
                       <td><a href="#"> {service.service}</a></td>
                       <td>{service.usable_area}</td>
                       <td>{service.costs}</td>
@@ -62,8 +65,34 @@ function Services() {
                       <td>{service.floor}</td>
                       <td>{service.free}</td>
                       <td>
-                        <a href="#" className="settings" title="Settings" data-toggle="tooltip"><i className="material-icons"></i></a>
-                        <a href="#" className="delete" title="Delete" data-toggle="tooltip"><i className="material-icons"></i></a>
+                        <Link to={`/service/update/${service.id}`}><a  className="settings" title="Settings" data-toggle="tooltip"><i className="material-icons"></i></a></Link>
+                        <Link onClick={() => {
+                            Swal.fire({
+                              title: 'Are you sure?',
+                              text: 'You will not be able to recover this file!',
+                              icon: 'warning',
+                              showCancelButton: true,
+                              confirmButtonText: 'Yes, delete it!',
+                              cancelButtonText: 'No, cancel!',
+                              reverseButtons: true
+                            }
+                            ).then(async (res) => {
+                              if (res.isConfirmed) {
+                                await deleteService(service.id).then(() => {
+                                  getServices().then((data) => {
+                                    setServices(data);
+                                  }).then(() => {
+                                    Swal.fire({
+                                      icon: 'success',
+                                      title: 'Delete success fully!!!!',
+                                      showConfirmButton: false,
+                                      timer: 1500
+                                    })
+                                  })
+                                });
+                              } else if (res.dismiss === Swal.DismissReason.cancel) {
+                              }
+                            })}}><a className="delete" title="Delete" data-toggle="tooltip"><i className="material-icons"></i></a></Link>
                       </td>
                     </tr>
 
